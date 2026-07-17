@@ -385,7 +385,7 @@
 </style>
 
 <section class="page-hero">
-    <img class="bg-layer" src="img/img-2.jpg" alt="Product catalog">
+    <img class="bg-layer" src="<?= base_url('assets/img/img-2.jpg') ?>" alt="Product catalog">
     <div class="bg-overlay"></div>
     <div class="wrap">
         <h1>Product Catalog</h1>
@@ -438,7 +438,7 @@
             <h3>Product Inquiry</h3>
             <p>Contact our team to discuss product availability, pricing, technical specifications, and delivery options for your farm, cooperative, or project.</p>
         </div>
-        <a href="contact.html" class="btn btn-lime">Request a Quote →</a>
+        <a href="<?= base_url('contact') ?>" class="btn btn-lime">Request a Quote →</a>
     </div>
 
     <!-- ===== CROP PROTECTION ===== -->
@@ -609,7 +609,7 @@
         </div>
         <div class="btn-group">
             <a href="#" class="btn btn-lime">Download PDF</a>
-            <a href="contact.html" class="btn-outline-dark">Request Printed Copy</a>
+            <a href="<?=base_url('contact')?>" class="btn-outline-dark">Request Printed Copy</a>
         </div>
     </div>      
 </main>

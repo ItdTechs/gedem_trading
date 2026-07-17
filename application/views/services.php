@@ -332,7 +332,7 @@
     }
 </style>
 <section class="page-hero">
-    <img class="bg-layer" src="img/img-3.jpg" alt="Service offerings">
+    <img class="bg-layer" src="<?= base_url('assets/img/img-3.jpg')?>" alt="Service offerings">
     <div class="bg-overlay"></div>
     <div class="wrap">
         <h1>Our Services</h1>
@@ -460,7 +460,7 @@
             <h3>Customized Service Solutions</h3>
             <p>We work closely with each client to develop tailored service packages that meet specific operational needs, budget constraints, and project timelines.</p>
         </div>
-        <a href="contact.html" class="btn btn-lime">Start a Conversation →</a>
+        <a href="<?= base_url('contact') ?>" class="btn btn-lime">Start a Conversation →</a>
     </div>
 
     <!-- ===== WHO WE SERVE ===== -->
@@ -501,7 +501,7 @@
         <h2>Get Started</h2>
         <p>Contact us to discuss your service requirements and discover how Gedem Trading PLC can support your
             agricultural project, farm, or institution.</p>
-        <a href="contact.html" class="btn btn-lime">Talk to Our Team →</a>
+        <a href="<?= base_url('contact') ?>" class="btn btn-lime">Talk to Our Team →</a>
     </section>
 </main>
 

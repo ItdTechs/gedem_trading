@@ -80,7 +80,7 @@
         <h2>Partnership Inquiry</h2>
         <p>Interested in partnering with Gedem Trading PLC? We would love to hear from you. Reach out to discuss
             distribution opportunities, procurement collaboration, or institutional partnerships.</p>
-        <a href="contact.html" class="btn btn-lime">Start a Partnership Conversation →</a>
+        <a href="<?= base_url('contact') ?>" class="btn btn-lime">Start a Partnership Conversation →</a>
     </section>
 </main>
     

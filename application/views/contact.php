@@ -1,5 +1,5 @@
 <section class="page-hero">
-    <img class="bg-layer" src="img/img-7.jpg" alt="Contact Gedem Trading PLC">
+    <img class="bg-layer" src="<?= base_url('assets/img/img-7.jpg')?>" alt="Contact Gedem Trading PLC">
     <div class="bg-overlay"></div>
     <div class="wrap">
         <h1>Contact Us</h1>
@@ -9,6 +9,25 @@
 </section>
 
 <main class="wrap">
+    <section class="page-section">
+        <h2>Contact Details</h2>
+        <div class="contact-details-grid">
+            <div class="contact-card">
+                <h3>Our Address</h3>
+                <p>Gedem Trading PLC<br>Addis Ababa, Ethiopia</p>
+            </div>
+            <div class="contact-card">
+                <h3>Email</h3>
+                <p><a href="mailto:info@gedemtradingplc.com">info@gedemtradingplc.com</a></p>
+            </div>
+            <div class="contact-card">
+                <h3>Phone</h3>
+                <p><a href="tel:+251111234567">+251 11 123 4567</a><br>
+                    <a href="tel:+251911234567">+251 911 234 567</a></p>
+            </div>
+        </div>
+    </section>
+
     <section class="page-section">
         <h2>Send Us a Message</h2>
         <p class="section-intro">Fill out the form below and our team will respond as soon as possible. For urgent
@@ -42,42 +61,9 @@
                 <button type="submit" class="btn btn-lime">Send Message →</button>
             </div>
         </form>
-    </section>
+    </section>        
 
-    <section class="page-section">
-        <h2>Contact Details</h2>
-        <div class="contact-details-grid">
-            <div class="contact-card">
-                <h3>Office Address</h3>
-                <p>Gedem Trading PLC<br>Addis Ababa, Ethiopia</p>
-            </div>
-            <div class="contact-card">
-                <h3>Email</h3>
-                <p><a href="mailto:info@gedemtradingplc.com">info@gedemtradingplc.com</a></p>
-            </div>
-            <div class="contact-card">
-                <h3>Phone</h3>
-                <p><a href="tel:+251111234567">+251 11 123 4567</a><br>
-                    <a href="tel:+251911234567">+251 911 234 567</a></p>
-            </div>
-        </div>
-    </section>
-
-    <section class="page-section">
-        <h2>Office Hours</h2>
-        <div class="content-grid two-col">
-            <div class="card">
-                <h3>Weekdays</h3>
-                <p>Monday – Friday: 8:30 AM – 5:30 PM</p>
-            </div>
-            <div class="card">
-                <h3>Weekend</h3>
-                <p>Saturday: 9:00 AM – 1:00 PM<br>Sunday: Closed</p>
-            </div>
-        </div>
-    </section>
-
-    <section class="page-section">
+    <!-- <section class="page-section">
         <h2>Find Us</h2>
         <p class="section-intro">Visit our office in Addis Ababa. Map location is approximate — contact us for
             detailed directions.</p>
@@ -88,7 +74,7 @@
                 referrerpolicy="no-referrer-when-downgrade"
                 title="Gedem Trading PLC office location in Addis Ababa"></iframe>
         </div>
-    </section>
+    </section> -->
 </main>
 <?php
 $content = ob_get_clean(); 

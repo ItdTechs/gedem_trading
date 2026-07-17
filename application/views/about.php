@@ -472,7 +472,7 @@
         <p>We believe that long-term agricultural success depends on protecting soil health, water resources, and
             biodiversity — and we work with our partners to promote practices that benefit both farmers and the
             environment.</p>
-        <a href="contact.html" class="btn btn-lime">Contact Our Team →</a>
+        <a href="<?php echo base_url('contact'); ?>" class="btn btn-lime">Contact Our Team →</a>
     </section>
 </main>
 

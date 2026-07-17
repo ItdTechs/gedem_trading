@@ -12,8 +12,8 @@ ob_start();
     <meta name="keywords" content="<?php echo $page_keywords; ?>" />
     <meta name="description" content="<?php echo $page_description; ?>" />
     <meta name="author" content="Gedem Trading PLC" />
-    <meta name="theme-color" content="#004C85">
-    <link rel="icon" type="image/x-icon" href="<?php echo base_url('assets/img/favicon.ico'); ?>">
+    <meta name="theme-color" content="#198F3A">
+    <link rel="icon" type="image/x-icon" href="<?php echo base_url('assets/img/favicon.png'); ?>">
     <link rel="apple-touch-icon" href="<?php echo base_url('assets/img/logo.png'); ?>">
     <meta name="apple-mobile-web-app-capable" content="yes">
     <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
@@ -79,22 +79,32 @@ ob_start();
     </div> -->
 
     <!-- ================= HERO / NAV ================= -->
-     <header class="site-nav">
+     <header class="site-nav" id="siteNav">
         <div class="wrap nav-inner">
-            <ul class="nav-links">
-                <li><a href="<?php echo base_url(); ?>" class="active">Home</a></li>
-                <li><a href="<?php echo base_url('about'); ?>">About</a></li>
-                <li><a href="<?php echo base_url('products'); ?>">Products</a></li>
-                <li><a href="<?php echo base_url('services'); ?>">Services</a></li>
-                <li><a href="<?php echo base_url('partners'); ?>">Partners</a></li>
-                <li><a href="<?php echo base_url('contact'); ?>">Contact</a></li>
-            </ul>
-            <button class="nav-toggle" id="navToggle" aria-label="Toggle navigation"><span></span></button>
-            <div class="nav-right">
-                <a href="mailto:info@gedemtradingplc.com">info@gedemtradingplc.com</a>
-                <a href="tel:+251911457474">+251 91 145 7474</a>
-            </div>
+            <a href="<?php echo base_url(); ?>" class="nav-brand" aria-label="Gedem Trading PLC home">
+                <img src="<?php echo base_url('assets/img/logo.png'); ?>" alt="Gedem Trading PLC" width="140" height="40">
+            </a>
+            <button class="nav-toggle" id="navToggle" type="button" aria-label="Toggle navigation" aria-expanded="false" aria-controls="navMenu">
+                <span class="nav-toggle-bar"></span>
+                <span class="nav-toggle-bar"></span>
+                <span class="nav-toggle-bar"></span>
+            </button>
+            <nav class="nav-menu" id="navMenu" aria-label="Main navigation">
+                <ul class="nav-links">
+                    <li><a href="<?php echo base_url(); ?>" class="active">Home</a></li>
+                    <li><a href="<?php echo base_url('about'); ?>">About</a></li>
+                    <li><a href="<?php echo base_url('products'); ?>">Products</a></li>
+                    <li><a href="<?php echo base_url('services'); ?>">Services</a></li>
+                    <li><a href="<?php echo base_url('partners'); ?>">Partners</a></li>
+                    <li><a href="<?php echo base_url('contact'); ?>">Contact</a></li>
+                </ul>
+                <div class="nav-right">
+                    <a href="mailto:info@gedemtradingplc.com">info@gedemtradingplc.com</a>
+                    <a href="tel:+251911457474">+251 91 145 7474</a>
+                </div>
+            </nav>
         </div>
+        <div class="nav-backdrop" id="navBackdrop" aria-hidden="true"></div>
     </header>        
     <?php echo $content;?>    
     
@@ -133,6 +143,42 @@ ob_start();
         </div>
     </footer>
     <script>
+        (function initMobileNav() {
+            const siteNav = document.getElementById('siteNav');
+            const navToggle = document.getElementById('navToggle');
+            const navMenu = document.getElementById('navMenu');
+            const navBackdrop = document.getElementById('navBackdrop');
+            if (!siteNav || !navToggle || !navMenu) return;
+
+            const setNavOpen = (open) => {
+                siteNav.classList.toggle('nav-open', open);
+                navToggle.setAttribute('aria-expanded', open ? 'true' : 'false');
+                document.body.classList.toggle('nav-scroll-lock', open);
+            };
+
+            navToggle.addEventListener('click', () => {
+                setNavOpen(!siteNav.classList.contains('nav-open'));
+            });
+
+            navBackdrop?.addEventListener('click', () => setNavOpen(false));
+
+            navMenu.querySelectorAll('a').forEach(link => {
+                link.addEventListener('click', () => setNavOpen(false));
+            });
+
+            document.addEventListener('keydown', (event) => {
+                if (event.key === 'Escape') setNavOpen(false);
+            });
+
+            window.addEventListener('resize', () => {
+                if (window.innerWidth > 900) setNavOpen(false);
+            });
+
+            window.addEventListener('scroll', () => {
+                siteNav.classList.toggle('nav-scrolled', window.scrollY > 24);
+            }, { passive: true });
+        })();
+
         document.querySelectorAll('.accordion-head').forEach(head => {
             head.addEventListener('click', () => {
                 const item = head.closest('.accordion-item');
@@ -142,6 +188,17 @@ ob_start();
             });
         });
 
+        const titleEl = document.getElementById('spotlightTitle');
+        const quoteEl = document.getElementById('spotlightQuote');
+        const highlightsEl = document.getElementById('spotlightHighlights');
+        const locationEl = document.getElementById('spotlightLocation');
+        const imageEl = document.getElementById('spotlightImage');
+        const barEl = document.getElementById('spotlightBar');
+        const dotsContainer = document.getElementById('spotlightDots');
+        const prevBtn = document.getElementById('prevSlide');
+        const nextBtn = document.getElementById('nextSlide');
+
+        if (titleEl && quoteEl && highlightsEl && locationEl && imageEl && barEl && dotsContainer && prevBtn && nextBtn) {
         const spotlightData = [
             {
                 title: 'Why Choose Gedem Trading PLC?',
@@ -181,15 +238,6 @@ ob_start();
             }
         ];
 
-        const titleEl = document.getElementById('spotlightTitle');
-        const quoteEl = document.getElementById('spotlightQuote');
-        const highlightsEl = document.getElementById('spotlightHighlights');
-        const locationEl = document.getElementById('spotlightLocation');
-        const imageEl = document.getElementById('spotlightImage');
-        const barEl = document.getElementById('spotlightBar');
-        const dotsContainer = document.getElementById('spotlightDots');
-        const prevBtn = document.getElementById('prevSlide');
-        const nextBtn = document.getElementById('nextSlide');
         let currentSlide = 0;
 
         function updateSlide(index) {
@@ -231,16 +279,8 @@ ob_start();
 
         createDots();
         updateSlide(0);
-
-        const navToggle = document.getElementById('navToggle');
-        const navLinks = document.querySelector('.nav-links');
-        const navRight = document.querySelector('.nav-right');
-        if (navToggle) {
-            navToggle.addEventListener('click', () => {
-                navLinks.classList.toggle('mobile-open');
-                navRight.classList.toggle('mobile-open');
-            });
         }
+
     </script>
     
     <!-- footer -->
