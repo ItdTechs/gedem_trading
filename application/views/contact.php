@@ -18,12 +18,12 @@
             </div>
             <div class="contact-card">
                 <h3>Email</h3>
-                <p><a href="mailto:info@gedemtradingplc.com">info@gedemtradingplc.com</a></p>
+                <p><a href="mailto:info@gedemtrading.com">info@gedemtrading.com</a></p>
             </div>
             <div class="contact-card">
                 <h3>Phone</h3>
-                <p><a href="tel:+251111234567">+251 11 123 4567</a><br>
-                    <a href="tel:+251911234567">+251 911 234 567</a></p>
+                <p><a href="tel:+251911457474">+251 91 145 7474</a><br>
+                    <a href="tel:+251973437676">+251 973 437 676</a></p>
             </div>
         </div>
     </section>

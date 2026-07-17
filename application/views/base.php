@@ -52,7 +52,7 @@ ob_start();
                     "addressRegion" => "Addis Ababa",
                     "addressCountry" => "ET"
                 ],
-                "telephone" => "+251929902424",
+                "telephone" => "++251911457474",
                 "email" => "alemhiwotly2a@gmail.com",
                 "sameAs" => [
                     "https://www.linkedin.com/company/gedem-trading",
@@ -99,7 +99,7 @@ ob_start();
                     <li><a href="<?php echo base_url('contact'); ?>">Contact</a></li>
                 </ul>
                 <div class="nav-right">
-                    <a href="mailto:info@gedemtradingplc.com">info@gedemtradingplc.com</a>
+                    <a href="mailto:info@gedemtrading.com">info@gedemtrading.com</a>
                     <a href="tel:+251911457474">+251 91 145 7474</a>
                 </div>
             </nav>
@@ -114,7 +114,7 @@ ob_start();
             <h2>Let's talk</h2>
             <div class="footer-col">
                 <div class="label">Email Us</div>
-                <div class="big"><a href="mailto:info@gedemtradingplc.com">info@gedemtradingplc.com</a></div>
+                <div class="big"><a href="mailto:info@gedemtrading.com">info@gedemtrading.com</a></div>
                 <div class="label">Contact Us</div>
                 <div class="big" style="text-decoration:none;"><a href="tel:+251911457474">+251 91 145 7474</a></div>
             </div>
