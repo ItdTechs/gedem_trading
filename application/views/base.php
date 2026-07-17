@@ -19,15 +19,23 @@ ob_start();
     <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
     <meta name="robots" content="index, follow">
     <meta name="googlebot" content="index, follow">
-    <!-- open graph tags -->
-     <meta property="og:title" content="<?php echo $page_title; ?>">
-    <meta property="og:description" content="<?php echo $page_description; ?>">
+        
+    <!-- Open Graph -->
+    <meta property="og:title" content="<?= $page_title; ?>">
+    <meta property="og:description" content="<?= $page_description; ?>">
     <meta property="og:type" content="website">
-    <meta property="og:url" content="<?php echo $canonical_url; ?>">
-    <!-- logo -->
-    <meta property="og:image" content="<?php echo base_url('assets/img/logo.png'); ?>">
+    <meta property="og:url" content="<?= $canonical_url; ?>">
+
     <meta property="og:site_name" content="Gedem Trading PLC">
-    <!-- twitter  -->
+
+    <meta property="og:image" content="<?= base_url('assets/img/logo.png'); ?>">
+    <meta property="og:image:secure_url" content="<?= base_url('assets/img/logo.png'); ?>">
+    <meta property="og:image:type" content="image/jpeg">
+    <meta property="og:image:width" content="1200">
+    <meta property="og:image:height" content="630">
+
+    <meta property="og:locale" content="en_US">
+
     <meta name="twitter:card" content="summary_large_image">
     <meta name="twitter:title" content="<?php echo $page_title; ?>">
     <meta name="twitter:description" content="<?php echo $page_description; ?>">
