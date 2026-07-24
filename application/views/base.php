@@ -23,14 +23,8 @@
     <link rel="icon" href="<?= base_url('assets/img/favicon.png')?>">
     <link rel="apple-touch-icon" href="<?= base_url('assets/img/logo.png')?>">
 
-    <!-- Only keep these if style.css actually pulls fonts from fonts.googleapis.com —
-         if fonts are self-hosted, delete both preconnects, they're dead weight otherwise -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-
-    <!-- Preload only fires when a controller sets $preload_image (e.g. the homepage hero).
-         Never hardcode this sitewide — preloading an image a page doesn't use delays
-         that page's real LCP resource instead of helping it. -->
     <?php if (!empty($preload_image)): ?>
     <link rel="preload" as="image" href="<?= $preload_image ?>">
     <?php endif; ?>
@@ -59,9 +53,7 @@
     <meta name="twitter:site" content="@GedemTrading">
     <meta name="twitter:creator" content="@GedemTrading">
 
-    <?php
-        // Shared @id so Organization and LocalBusiness resolve to ONE entity
-        // instead of two separate, conflicting nodes.
+    <?php       
         $org_id = base_url() . '#organization';
 
         $schema = [];
@@ -150,9 +142,6 @@
             ];
         }
 
-        // NOTE: on the homepage, set $schema_type to 'WebPage' (not 'Organization') in
-        // Home.php — the full Organization entity is already declared above, so reusing
-        // that type here creates a second, conflicting Organization node.
         $schema[] = [
             "@context" => "https://schema.org",
             "@type" => $schema_type,
@@ -198,7 +187,7 @@
     </header>
 
     <?php if (!empty($breadcrumbs) && count($breadcrumbs) > 1): ?>
-    <nav class="breadcrumb-nav wrap" aria-label="Breadcrumb">
+    <!-- <nav class="breadcrumb-nav wrap" aria-label="Breadcrumb">
         <ol class="breadcrumb-list">
             <?php foreach ($breadcrumbs as $i => $crumb): ?>
                 <?php if ($i < count($breadcrumbs) - 1): ?>
@@ -208,7 +197,7 @@
                 <?php endif; ?>
             <?php endforeach; ?>
         </ol>
-    </nav>
+    </nav> -->
     <?php endif; ?>
 
     <?php echo $content;?>
