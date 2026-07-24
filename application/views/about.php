@@ -286,8 +286,6 @@
 </section>
 
 <main class="wrap">
-
-
     <!-- ===== WHO WE ARE ===== -->
     <section class="page-section">
         <h2>Who We Are</h2>
@@ -475,7 +473,6 @@
         <a href="<?php echo base_url('contact'); ?>" class="btn btn-lime">Contact Our Team →</a>
     </section>
 </main>
-
 
 <?php
 $content = ob_get_clean(); 
